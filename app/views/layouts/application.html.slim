@@ -1,0 +1,39 @@
+doctype html
+html ng-app='app'
+  head
+    title Lookup
+    meta content="width=device-width, initial-scale=1" name="viewport" /
+    /! Latest compiled and minified CSS
+    / script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" 
+    / script src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAuxXNzjo-GEuPYBskFMuaqhmLBJHsjesw" 
+    / script src="https://cdnjs.cloudflare.com/ajax/libs/geocomplete/1.7.0/jquery.geocomplete.js" 
+    / script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js" 
+    / script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" 
+    / script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js" 
+    /! Geocomplete
+    / link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" /
+    / link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css" rel="stylesheet" /
+    / link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" /
+    link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet" /
+    link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet" /
+    link href="/assets/lookup(1).jpeg" rel="icon" type="image/ico" /
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+  body
+    head
+      = render '/header'
+    #CallToAction.container.responsive-home-div
+      .row style="height: 100%; width: 100%;"
+        .col-lg-4.col-xs-4.responsive-home-cols
+          i.fa.fa-search.fa-5x aria-hidden="true" font-size="" 
+          p style="font-weight: 900;" Find
+        .col-lg-4.col-xs-4.responsive-home-cols
+          i.fa.fa-cutlery.fa-5x aria-hidden="true" 
+          p style="font-weight: 900;" Reserve or Goin
+        .col-lg-4.col-xs-4.responsive-home-cols
+          i.fa.fa-money.fa-5x aria-hidden="true" 
+          p style="font-weight: 900;" Save on your order
+    .container.text-center
+      .container.alert= flash[:alert]
+    div ui-view=''

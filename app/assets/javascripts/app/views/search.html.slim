@@ -1,0 +1,15 @@
+.text-center style="font-family: Alfa Slab One;vertical-align: middle;"
+  / h3.responsive-home_text style="color:white;" 
+  /   strong
+  /     | Please
+  /     a href="/sessions/new"  Sign in
+  /     | or
+  /     a href="/users/new"  Sign up
+  /     | to use this App
+  p style="color:white;"  Find a Eat-out
+  form name='loginFrom' novalidate=''
+    input.responsive-home-input ng-model='q.term' placeholder='food type' style='border-radius:2px'
+    input.responsive-home-input ng-model='q.location' placeholder='City'
+    input type='hidden' ng-model='q.latitude'
+    input type='hidden' ng-model='q.longitude'
+    button.btn.btn-outline-secondary.responsive-button.responsive-search ng-click='submit(loginFrom.$valid)' style='margin-left: -5.5px; border-radius:2px' Look up
